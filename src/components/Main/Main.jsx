@@ -34,7 +34,9 @@ useEffect(()=>{
 useEffect(() => {
   let copydata = [...combinedData];
 
-  copydata = copydata.filter(c => c.name.toLowerCase().includes(search.toLowerCase()));
+  if(search){
+    copydata = copydata.filter(c => c.name.toLowerCase().includes(search.toLowerCase()));
+  }
 
   if(filter === "Gwenborough"){
     copydata = copydata.filter(c => c.address.city === "Gwenborough");
@@ -54,10 +56,11 @@ useEffect(() => {
 
   return (
     <div className='container'>
-        {filteredData.map((c) => {
-            return <Card key = {c.id} name = {c.name}
-            city = {c.address.city} posts={c.posts.map(p => p.title).join(", ")} />
-        })}
+    {filteredData.map(c => (
+        <Card key = {c.id} name = {c.name}
+        city = {c.address.city} posts={c.posts.map(p => p.title).join(", ")} />
+      ))
+    }
     </div>
   )
 }
