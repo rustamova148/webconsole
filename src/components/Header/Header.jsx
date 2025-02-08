@@ -8,8 +8,7 @@ console.log(sort);
   return (
     <div>
         <div style={{display: "flex", justifyContent: "center", alignItems: "center", gap: "6px"}}>
-        <label htmlFor="search">Search:</label>
-        <input type="search" id="search" value={search} onChange={handleChange1} />
+        <input type="search" id="search" placeholder="Search..." value={search} onChange={handleChange1} style={{padding: "4px 8px"}} />
         </div> <br />
 
         <div style={{display: "flex", justifyContent: "center", gap: "30px", marginTop: "20px"}}>
