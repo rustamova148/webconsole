@@ -1,11 +1,12 @@
-import React from 'react'
 import './Card.css'
 
-const Card = ({name,city}) => {
+// eslint-disable-next-line react/prop-types
+const Card = ({name,city,posts}) => {
   return (
     <div className='card'>
-        {name}
-        {city}
+        <b>Name:</b> {name} <br />
+        <b>City:</b> {city} <br />
+        <b>Posts:</b> {posts}
     </div>
   )
 }

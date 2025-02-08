@@ -1,21 +1,35 @@
-import React from 'react'
 import './Header.css'
 
-const Header = () => {
+// eslint-disable-next-line react/prop-types
+const Header = ({search, handleChange1, filter, handleChange2, sort, handleChange3}) => {
+console.log(search);
+console.log(filter);
+console.log(sort);
   return (
     <div>
-        <input type="search" />
-        <button>search</button>
+        <div style={{display: "flex", justifyContent: "center", alignItems: "center", gap: "6px"}}>
+        <label htmlFor="search">Search:</label>
+        <input type="search" id="search" value={search} onChange={handleChange1} />
+        </div> <br />
 
-        <select name="filter" id="filter">
-            <option value="seher1">seher1</option>
-            <option value="seher2">seher2</option>
+        <div style={{display: "flex", justifyContent: "center", gap: "30px", marginTop: "20px"}}>
+        <div style={{display: "flex", gap: "6px"}}>
+        <label htmlFor="filter">Filter By City:</label>
+        <select name="filter" id="filter" onChange={handleChange2}>
+            <option value="defaultf">Default</option>
+            <option value="Gwenborough">Gwenborough</option>
+            <option value="Wisokyburgh">Wisokyburgh</option>
         </select>
-
-        <select name="sort" id="sort">
+        </div>
+        <div style={{display: "flex", gap: "6px"}}>
+        <label htmlFor="sort">Sort By Name:</label>
+        <select name="sort" id="sort" onChange={handleChange3}>
+            <option value="defaults">Default</option>
             <option value="A-Z">A-Z</option>
             <option value="Z-A">Z-A</option>
         </select>
+        </div>
+        </div>
     </div>
   )
 }
